@@ -1,10 +1,10 @@
 # chat-bubble
-A chat bubble for your terminal, wrap test into speech bubble
+A chat bubble for your terminal.
 
 **Usage:**
 
 ```
-const chatBubble = require('chatBubble');
+const chatBubble = require('node-chat-bubble');
 const message = 'Hello World';
 console.log(chatBubble.get(message));
 

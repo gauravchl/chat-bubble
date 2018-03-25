@@ -1,5 +1,5 @@
 {
-  "name": "chat-bubble",
+  "name": "node-chat-bubble",
   "version": "1.0.0",
   "description": "A chat bubble for your terminal",
   "main": "index.js",
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gauravchl/chat-bubble.git"
+    "url": "git+https://github.com/gauravchl/node-chat-bubble.git"
   },
   "keywords": [
     "node",
@@ -23,9 +23,9 @@
   "author": "Gaurav Chikhale",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/gauravchl/chat-bubble/issues"
+    "url": "https://github.com/gauravchl/node-chat-bubble/issues"
   },
-  "homepage": "https://github.com/gauravchl/chat-bubble#readme",
+  "homepage": "https://github.com/gauravchl/node-chat-bubble#readme",
   "dependencies": {
     "cli-boxes": "^1.0.0",
     "wrap-ansi": "^3.0.1"
