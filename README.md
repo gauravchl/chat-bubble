@@ -23,3 +23,8 @@ options.boxWidth | number | width of the box
 **Contributing**
 
 Please feel free to submit any bugs or suggestions as issues. Pull requests are welcome.
+
+
+**ToDo**
+
+- Add spike and it's position
