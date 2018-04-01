@@ -1,4 +1,5 @@
 # chat-bubble
+
 A chat bubble for your terminal.
 
 **Usage:**
@@ -12,19 +13,14 @@ const options = { boxWidth: 52 };
 console.log(chatBubble.get(message, options))
 ```
 
-
 **Options:**
 
-Parameter | Type | Description
-------|------ | -------------
-options.boxWidth | number | width of the box
-
+| Parameter      | Type   | Description                              |
+| -------------- | ------ | ---------------------------------------- |
+| boxWidth       | number | width of the box, default: 30            |
+| spikePosition  | number | position of spike from left, default: 10 |
+| spikeDirection | string | 'right' or 'left', default is 'right'    |
 
 **Contributing**
 
 Please feel free to submit any bugs or suggestions as issues. Pull requests are welcome.
-
-
-**ToDo**
-
-- Add spike and it's position
