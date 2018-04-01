@@ -15,11 +15,12 @@ console.log(chatBubble.get(message, options))
 
 **Options:**
 
-| Parameter      | Type   | Description                              |
-| -------------- | ------ | ---------------------------------------- |
-| boxWidth       | number | width of the box, default: 30            |
-| spikePosition  | number | position of spike from left, default: 10 |
-| spikeDirection | string | 'right' or 'left', default is 'right'    |
+| Parameter      | Type   | Description                                                           |
+| -------------- | ------ | --------------------------------------------------------------------- |
+| boxWidth       | number | width of the box, default: 30                                         |
+| boxType        | string | single, double, round(default), single-double, double-single, classic |
+| spikePosition  | number | position of spike from left, default: 10                              |
+| spikeDirection | string | 'right' or 'left', default is 'right'                                 |
 
 **Contributing**
 

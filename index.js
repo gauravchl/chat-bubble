@@ -6,19 +6,21 @@ const cliBoxes = require("cli-boxes");
 const defaultOptions = {
   boxWidth: 30,
   spikeDirection: "right",
-  spikePosition: 10
+  spikePosition: 10,
+  boxType: "round"
 };
 
 const getBox = (message, options) => {
   options = Object.assign(defaultOptions, options);
   let boxWidth = options.boxWidth;
   let spikePosition = options.spikePosition;
+  const boxType = options.boxType;
   const spikeDirection = options.spikeDirection;
   // If there is only one line and char length is less than boxWidth, reduce the box width.
   if (message.length < boxWidth) boxWidth = message.length + 4;
   if (boxWidth < spikePosition) spikePosition = boxWidth / 2;
 
-  const boxChars = cliBoxes.round;
+  const boxChars = cliBoxes[boxType];
   const topBorder =
     boxChars.topLeft +
     boxChars.horizontal.repeat(boxWidth - 2) +
