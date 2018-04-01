@@ -1,11 +1,25 @@
 'use strict';
+
 const wrapAnsi = require('wrap-ansi');
 const cliBoxes = require('cli-boxes');
 
-const BOX_WIDTH = 30;
+
+const defaultOptions = {
+  boxWidth: 30,
+  spikeDirection: 'right',
+  spikePosition: 10,
+}
 
 const getBox = (message, options) => {
-  const boxWidth = options && options.boxWidth || BOX_WIDTH;
+  options = Object.assign(defaultOptions, options);
+  let boxWidth = options.boxWidth;
+  let spikePosition = options.spikePosition;
+  const spikeDirection = options.spikeDirection;
+  // If there is only one line and char length is less than boxWidth, reduce the box width.
+  if (message.length < boxWidth) boxWidth = message.length + 4;
+  if (boxWidth < spikePosition) spikePosition = boxWidth / 2;
+
+
   const boxChars = cliBoxes.round;
   const topBorder = boxChars.topLeft + boxChars.horizontal.repeat(boxWidth - 2) + boxChars.topRight;
   const bottomBorder = boxChars.bottomLeft + boxChars.horizontal.repeat(boxWidth - 2) + boxChars.bottomRight;
@@ -19,7 +33,10 @@ const getBox = (message, options) => {
     return boxChars.vertical + ' ' + line + ' ' + rightPadding + boxChars.vertical;
   });
 
-  const result = topBorder + '\n' + lines.join('\n') + '\n' + bottomBorder;
+  let result = topBorder + '\n' + lines.join('\n') + '\n' + bottomBorder;
+
+  const spike = spikeDirection === 'right' ? '\\' : '/';
+  result += '\n' + ' '.repeat(spikePosition) + spike;
   return result;
 }
 
