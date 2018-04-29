@@ -1,6 +1,6 @@
 {
   "name": "node-chat-bubble",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A chat bubble for your terminal",
   "main": "index.js",
   "scripts": {
@@ -28,6 +28,7 @@
   "homepage": "https://github.com/gauravchl/node-chat-bubble#readme",
   "dependencies": {
     "cli-boxes": "^1.0.0",
+    "string-length": "^2.0.0",
     "wrap-ansi": "^3.0.1"
   }
 }
