@@ -28,6 +28,7 @@
   "homepage": "https://github.com/gauravchl/node-chat-bubble#readme",
   "dependencies": {
     "cli-boxes": "^1.0.0",
+    "string-length": "^2.0.0",
     "wrap-ansi": "^3.0.1"
   }
 }

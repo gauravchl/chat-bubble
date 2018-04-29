@@ -2,6 +2,7 @@
 
 const wrapAnsi = require("wrap-ansi");
 const cliBoxes = require("cli-boxes");
+const stringLength = require("string-length");
 
 const defaultOptions = {
   boxWidth: 30,
@@ -17,7 +18,7 @@ const getBox = (message, options) => {
   const boxType = options.boxType;
   const spikeDirection = options.spikeDirection;
   // If there is only one line and char length is less than boxWidth, reduce the box width.
-  if (message.length < boxWidth) boxWidth = message.length + 4;
+  if (stringLength(message) < boxWidth) boxWidth = stringLength(message) + 4;
   if (boxWidth < spikePosition) spikePosition = boxWidth / 2;
 
   const boxChars = cliBoxes[boxType];
@@ -34,8 +35,8 @@ const getBox = (message, options) => {
 
   // Add vertical borders and paddings
   lines = lines.map(line => {
-    const rightPaddingCount = boxWidth - 4 - line.length;
-    const rightPadding = " ".repeat(rightPaddingCount);
+    const rightPaddingCount = boxWidth - 4 - stringLength(line);
+    const rightPadding = " ".repeat(Math.max(rightPaddingCount, 0));
     return boxChars.vertical + " " + line + " " + rightPadding + boxChars.vertical;
   });
 
